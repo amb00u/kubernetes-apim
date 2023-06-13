@@ -15,14 +15,18 @@ limitations under the License.
 {{/*
 Expand the name of the chart.
 */}}
-{{- define "am-single-node.name" -}}
-{{- default .Chart.Name .Values.nameOverride | trunc 63 | trimSuffix "-" }}
-{{- end }}
+{{- define "am-single-node.name" -}} ## Define a variable ###
+{{- default .Chart.Name .Values.nameOverride | trunc 63 | trimSuffix "-" }} ### Gives defined variable a default value ###
+{{- end }}  ### If .Values.nameOverride is empty, .Chart.Name will be used. ###
+            ### .Chart refers to .Chart.yaml file ###
+            ### We truncate at 63 chars because some Kubernetes name fields are limited to this ####
+            ### trimsuffix removes the specified suffix from the end of the given string. ###
 
 {{/*
 Create a default fully qualified app name.
 We truncate at 63 chars because some Kubernetes name fields are limited to this (by the DNS naming spec).
 If release name contains chart name it will be used as a full name.
+### We can create .Release.yaml if needed ###
 */}}
 {{- define "am-single-node.fullname" -}}
 {{- if .Values.fullnameOverride }}
@@ -64,10 +68,10 @@ Common prefix prepended to Kubernetes resources of this chart
 {{- "wso2am-single-node" }}
 {{- end -}}
 
-{{- define "image" }}
-{{- $imageName := .deployment.imageName }}
-{{- $imageTag := .deployment.imageTag | default "" }}
-{{- if or (eq .Values.wso2.subscription.username "") (eq .Values.wso2.subscription.password "") -}}
+{{- define "image" }} ### Ici on définit un objet ###
+{{- $imageName := .deployment.imageName }} ### Ici on déclare et initialise une variable ###
+{{- $imageTag := .deployment.imageTag | default "" }} ### de même ici
+{{- if or (eq .Values.wso2.subscription.username "") (eq .Values.wso2.subscription.password "") -}} ### if username or password is empty ###
 {{- $dockerRegistry := .deployment.dockerRegistry | default "wso2" }}
 image: {{ $dockerRegistry }}/{{ $imageName }}{{- if not (eq $imageTag "") }}{{- printf ":%s" $imageTag -}}{{- end }}
 {{- else }}
