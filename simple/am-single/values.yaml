@@ -32,7 +32,7 @@ wso2:
       # The configuration should be set to be 'true' if a MySQL database should be spawned as a pod within the cluster
       cluster_mysql: true
       # Enable NFS dynamic provisioner for Kubernetes
-      nfsServerProvisioner: false
+      nfsServerProvisioner: true
 
     # Persisted and shared runtime artifacts for API Manager
     # See official documentation (from https://apim.docs.wso2.com/en/latest/install-and-setup/setup/reference/common-runtime-and-configuration-artifacts/#persistent-runtime-artifacts)
@@ -46,7 +46,7 @@ wso2:
       apacheSolrIndexing:
         # Indicates if persistence of the runtime artifacts for Apache Solr-based indexing is enabled
         # By default, this is disabled
-        enabled: false
+        enabled: true
         # Define capacities for persistent runtime artifact directories
         capacity:
           # For persisting the H2 based local Carbon database file
