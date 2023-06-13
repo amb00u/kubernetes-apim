@@ -108,7 +108,7 @@ wso2:
         management:
           enabled: true
           # Hostname for API Manager Carbon Management Console, Publisher, DevPortal and Admin Portal
-          hostname: "hostname"
+          hostname: "localhost" #am.wso2.com
           # Annotations for the API Manager Publisher-DevPortal services Ingress
           annotations:
             kubernetes.io/ingress.class: "nginx"
@@ -119,21 +119,21 @@ wso2:
         gateway:
           enabled: true
           # Hostname for Gateway profile
-          hostname: "localhost"
+          hostname: "localhost" #gateway.am.wso2.com
           # Annotations for the API Manager Gateway service Ingress
           annotations:
             kubernetes.io/ingress.class: "nginx"
             nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
         websub:
           enabled: true
-          hostname: "localhost"
+          hostname: "localhost"  #websub.am.wso2.com
           # Annotations for the API Manager WebSub service Ingress
           annotations:
             kubernetes.io/ingress.class: "nginx"
             nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
         websocket:
           enabled: true
-          hostname: "localhost"
+          hostname: "localhost"  #websocket.am.wso2.com
           # Annotations for the API Manager WebSocket service Ingress
           annotations:
             kubernetes.io/ingress.class: "nginx"
