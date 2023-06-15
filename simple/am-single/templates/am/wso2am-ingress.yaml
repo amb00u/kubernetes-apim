@@ -35,7 +35,7 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: {{ template "am-single-node.resource.prefix" . }}-am-service
+                name: {{ template "am-single-node.resource.prefix" . }}-am-service  ## Service créé dans wso2am-service.yaml
                 port:
                   number: 9443
 {{- end -}}
