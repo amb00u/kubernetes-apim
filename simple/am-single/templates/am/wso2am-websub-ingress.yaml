@@ -31,7 +31,7 @@ spec:
   - host: {{ .Values.wso2.deployment.am.ingress.websub.hostname }}
     http:
       paths:
-      - path: /
+      - path: /websub/.*
         pathType: Prefix
         backend:
           service:

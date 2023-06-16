@@ -31,7 +31,7 @@ spec:
   - host: {{ .Values.wso2.deployment.am.ingress.websocket.hostname }}
     http:
       paths:
-      - path: /
+      - path: /websocket/.*
         pathType: Prefix
         backend:
           service:

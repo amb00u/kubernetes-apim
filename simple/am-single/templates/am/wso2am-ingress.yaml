@@ -31,7 +31,84 @@ spec:
     - host: {{ .Values.wso2.deployment.am.ingress.management.hostname }}
       http:
         paths:
-          - path: /.*
+          - path: /api/.*
+            pathType: Prefix
+            backend:
+              service:
+                name: {{ template "am-single-node.resource.prefix" . }}-am-service  ## Service créé dans wso2am-service.yaml
+                port:
+                  number: 9443
+          - path: /oauth2/.*
+            pathType: Prefix
+            backend:
+              service:
+                name: {{ template "am-single-node.resource.prefix" . }}-am-service  ## Service créé dans wso2am-service.yaml
+                port:
+                  number: 9443
+          - path: /accountrecoveryendpoint/.*
+            pathType: Prefix
+            backend:
+              service:
+                name: {{ template "am-single-node.resource.prefix" . }}-am-service  ## Service créé dans wso2am-service.yaml
+                port:
+                  number: 9443
+          - path: /logincontext/.*
+            pathType: Prefix
+            backend:
+              service:
+                name: {{ template "am-single-node.resource.prefix" . }}-am-service  ## Service créé dans wso2am-service.yaml
+                port:
+                  number: 9443
+          - path: /authenticationendpoint/.*
+            pathType: Prefix
+            backend:
+              service:
+                name: {{ template "am-single-node.resource.prefix" . }}-am-service  ## Service créé dans wso2am-service.yaml
+                port:
+                  number: 9443
+          - path: /api
+            pathType: Prefix
+            backend:
+              service:
+                name: {{ template "am-single-node.resource.prefix" . }}-am-service  ## Service créé dans wso2am-service.yaml
+                port:
+                  number: 9443
+          - path: /carbon/.*
+            pathType: Prefix
+            backend:
+              service:
+                name: {{ template "am-single-node.resource.prefix" . }}-am-service  ## Service créé dans wso2am-service.yaml
+                port:
+                  number: 9443
+          - path: /carbon
+            pathType: Prefix
+            backend:
+              service:
+                name: {{ template "am-single-node.resource.prefix" . }}-am-service  ## Service créé dans wso2am-service.yaml
+                port:
+                  number: 9443
+          - path: /publisher/.*
+            pathType: Prefix
+            backend:
+              service:
+                name: {{ template "am-single-node.resource.prefix" . }}-am-service  ## Service créé dans wso2am-service.yaml
+                port:
+                  number: 9443
+          - path: /devportal/.*
+            pathType: Prefix
+            backend:
+              service:
+                name: {{ template "am-single-node.resource.prefix" . }}-am-service  ## Service créé dans wso2am-service.yaml
+                port:
+                  number: 9443
+          - path: /publisher
+            pathType: Prefix
+            backend:
+              service:
+                name: {{ template "am-single-node.resource.prefix" . }}-am-service  ## Service créé dans wso2am-service.yaml
+                port:
+                  number: 9443
+          - path: /devportal
             pathType: Prefix
             backend:
               service:
