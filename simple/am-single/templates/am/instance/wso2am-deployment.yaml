@@ -18,7 +18,7 @@ metadata:
   name: {{ template "am-single-node.resource.prefix" . }}-am-deployment
   namespace: {{ .Release.Namespace }}
 spec:
-  replicas: 1
+  replicas: 3
   strategy:
     type: Recreate
   selector:

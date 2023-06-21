@@ -109,7 +109,7 @@ wso2:
         management:
           enabled: true
           # Hostname for API Manager Carbon Management Console, Publisher, DevPortal and Admin Portal
-          hostname: "localhost" #am.wso2.com ###localhost ### myLinode LB
+          hostname: "mng.grash-cmms.com" #am.wso2.com ###localhost ### myLinode LB
           # Annotations for the API Manager Publisher-DevPortal services Ingress
           annotations:
             kubernetes.io/ingress.class: "nginx"
@@ -121,7 +121,7 @@ wso2:
         gateway:
           enabled: true
           # Hostname for Gateway profile
-          hostname: "localhost" #gateway.am.wso2.com
+          hostname: "gtw.grash-cmms.com" #gateway.am.wso2.com
           # Annotations for the API Manager Gateway service Ingress
           annotations:
             kubernetes.io/ingress.class: "nginx"
@@ -129,7 +129,7 @@ wso2:
             nginx.ingress.kubernetes.io/use-regex: "true"  ### Added
         websub:
           enabled: true
-          hostname: "localhost"  #websub.am.wso2.com
+          hostname: "websub.grash-cmms.com"  #websub.am.wso2.com
           # Annotations for the API Manager WebSub service Ingress
           annotations:
             kubernetes.io/ingress.class: "nginx"
@@ -137,7 +137,7 @@ wso2:
             nginx.ingress.kubernetes.io/use-regex: "true"  ### Added
         websocket:
           enabled: true
-          hostname: "localhost"  #websocket.am.wso2.com
+          hostname: "websocket.grash-cmms.com"  #websocket.am.wso2.com
           # Annotations for the API Manager WebSocket service Ingress
           annotations:
             kubernetes.io/ingress.class: "nginx"
